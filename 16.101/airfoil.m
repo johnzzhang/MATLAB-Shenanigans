@@ -14,14 +14,14 @@ x=0:h:c;
 %x_cmax = P/10*c;
 
 m = M/100;
-p = P/10;
+p = P/10;sset
 
 z_c = @(x) ((x/c >= 0 & x/c <= p).*(m/p^2.*x/c.*(2*p-x/c)))+((x/c > p & x/c <= 1) .* (m/(1-p)^2*(1-2*p+2*p.*x/c-(x/c).^2)));
 
 % check for NaN for symmetric airfoils
 z_c_s = c*z_c(x);
 z_c_s(isnan(z_c_s))=0;
-
+ancy
 theta_c = atan(diff(z_c_s)/h);
 
 x_u = @(x,theta) x-t(x)*.5.*sin(theta);
